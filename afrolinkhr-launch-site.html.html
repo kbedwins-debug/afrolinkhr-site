@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfrolinkHR | Privacy-first hiring</title>
+  <meta name="description" content="AfrolinkHR is a privacy-first hiring platform connecting employers and job seekers across borders with verified profiles, applications, and subscription access." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#f7f6f2; --surface:#fbfbf9; --surface-2:#f3f0ec; --text:#28251d; --muted:#6f6b64; --line:#d9d4cc;
+      --primary:#01696f; --primary-hover:#0c4e54; --inverse:#f9f8f4; --radius:18px; --radius-sm:12px;
+      --shadow:0 18px 60px rgba(40,37,29,.09); --max:1180px;
+    }
+    [data-theme="dark"] { --bg:#171614; --surface:#1c1b19; --surface-2:#22211f; --text:#e7e4de; --muted:#a4a097; --line:#34322e; --primary:#4f98a3; --primary-hover:#76b3bc; --inverse:#10100f; --shadow:0 22px 60px rgba(0,0,0,.35); }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%} button{font:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--bg) 84%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid color-mix(in srgb, var(--line) 75%, transparent)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}.brand-mark{width:42px;height:42px;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand-name{display:flex;flex-direction:column;line-height:1}.brand-name span:last-child{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+    .nav-links{display:flex;gap:18px;align-items:center;color:var(--muted);font-size:14px}.nav-links a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:999px;border:1px solid transparent;font-weight:700;cursor:pointer;min-height:48px}
+    .btn-primary{background:var(--primary);color:var(--inverse)} .btn-primary:hover{background:var(--primary-hover)} .btn-secondary{background:var(--surface);border-color:var(--line)}
+    .theme-btn{width:46px;height:46px;border-radius:999px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center}
+    .hero{padding:72px 0 40px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    h1{font-family:"Instrument Serif",serif;font-size:clamp(42px,8vw,84px);line-height:.96;letter-spacing:-.03em;margin:18px 0 18px}
+    .lead{font-size:18px;color:var(--muted);max-width:62ch}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .hero-card,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:24px}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.stat{padding:16px;border-radius:var(--radius-sm);background:var(--surface-2);border:1px solid color-mix(in srgb,var(--line) 78%, transparent)} .stat strong{display:block;font-size:28px}
+    section{padding:34px 0}.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}.section-head h2{font-size:clamp(28px,5vw,46px);line-height:1.02;font-family:"Instrument Serif",serif;margin:0}.muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{padding:22px}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:color-mix(in srgb,var(--primary) 10%, var(--surface));color:var(--primary);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price{font-size:42px;font-weight:800;line-height:1}.price span{font-size:14px;color:var(--muted);font-weight:600}
+    .list{padding:0;margin:16px 0 0;list-style:none;display:grid;gap:10px}.list li{display:flex;gap:10px;align-items:flex-start}.check{color:var(--primary);font-weight:900}
+    .faq{display:grid;gap:14px}.faq details{background:var(--surface);border:1px solid var(--line);padding:18px 20px;border-radius:16px}.faq summary{cursor:pointer;font-weight:700}
+    .inline-form{display:grid;grid-template-columns:1.2fr 1fr auto;gap:10px}.input{width:100%;padding:14px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--text);min-height:48px}
+    footer{padding:32px 0 60px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px}.small{font-size:14px}
+    @media (max-width: 960px){.hero-grid,.grid-3,.grid-2,.pricing,.footer-grid{grid-template-columns:1fr}.nav-links{display:none}.inline-form{grid-template-columns:1fr}.hero{padding-top:42px}}
+  </style>
+</head>
+<body>
+  <header class="topbar" id="top">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="AfrolinkHR home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 6.5C8.6 4.9 10.4 4 12.4 4C15.8 4 18.5 6.7 18.5 10.1C18.5 12 17.7 13.7 16.2 15.1L12 19.2L7.8 15.1C6.3 13.7 5.5 12 5.5 10.1C5.5 8.8 6 7.6 7 6.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M9.25 10.2C10.1 11.15 10.95 11.7 11.8 11.85C13.25 12.1 14.55 11.3 15.9 9.55" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-name">AfrolinkHR <span>Privacy-first hiring</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#trust">Trust</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button class="theme-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+        <a class="btn btn-primary" href="#waitlist">Get early access</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Verified hiring • Cross-border recruitment</span>
+          <h1>Hire with more trust. Apply with more confidence.</h1>
+          <p class="lead">AfrolinkHR helps employers discover screened talent and helps workers find real international opportunities through a privacy-first platform built for verified profiles, controlled disclosure, and cleaner communication.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+            <a class="btn btn-secondary" href="#pricing">See pricing</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <span class="pill">Launch-ready site</span>
+          <h3 style="margin:14px 0 10px;font-size:26px;">Built for employers, workers, and future operations.</h3>
+          <p class="muted">This public-facing version explains the offer clearly and gives your brand a polished starting point for launch, outreach, and trust-building.</p>
+          <div class="stat-grid">
+            <div class="stat"><strong>2-sided</strong><span class="muted small">Employer and job-seeker onboarding</span></div>
+            <div class="stat"><strong>Private</strong><span class="muted small">Controlled disclosure and internal communication</span></div>
+            <div class="stat"><strong>Global</strong><span class="muted small">Built for cross-border hiring workflows</span></div>
+            <div class="stat"><strong>Ready</strong><span class="muted small">Prepared for Vercel deployment and domain setup</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How AfrolinkHR works</h2>
+          <p class="muted">A clearer path for qualified hiring and serious applications.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><span class="pill">1</span><h3>Create verified profiles</h3><p>Employers and job seekers build structured profiles designed for screening, fit, and trust instead of random informal outreach.</p></article>
+          <article class="card"><span class="pill">2</span><h3>Control disclosure</h3><p>Public visitors see enough to understand opportunity quality, while sensitive information stays protected until the right stage.</p></article>
+          <article class="card"><span class="pill">3</span><h3>Manage hiring flow</h3><p>Applications, updates, and future payment workflows are designed to stay inside the platform rather than through scattered email chains.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for trust</h2>
+          <p class="muted">Trust signals matter before a customer clicks apply or subscribe.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><h3>For employers</h3><p>Show hiring intent, role quality, and seriousness without exposing every internal detail too early. AfrolinkHR is positioned around controlled disclosure rather than anonymous chaos.</p></article>
+          <article class="card"><h3>For job seekers</h3><p>Find real opportunities with clearer categories, better expectations, and a cleaner application path built around verified platform activity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple pricing structure</h2>
+          <p class="muted">A clear starting point you can refine after launch.</p>
+        </div>
+        <div class="pricing">
+          <article class="card"><span class="pill">Workers</span><h3>Starter access</h3><p class="price">$9 <span>/ month</span></p><ul class="list"><li><span class="check">✓</span><span>Profile visibility</span></li><li><span class="check">✓</span><span>Job applications</span></li><li><span class="check">✓</span><span>Basic support</span></li></ul></article>
+          <article class="card"><span class="pill">Employers</span><h3>Hiring access</h3><p class="price">$49 <span>/ month</span></p><ul class="list"><li><span class="check">✓</span><span>Company profile</span></li><li><span class="check">✓</span><span>Candidate discovery</span></li><li><span class="check">✓</span><span>Application tracking</span></li></ul></article>
+          <article class="card"><span class="pill">Enterprise</span><h3>Managed recruitment</h3><p class="price">Custom <span>pricing</span></p><ul class="list"><li><span class="check">✓</span><span>Vetting support</span></li><li><span class="check">✓</span><span>Training coordination</span></li><li><span class="check">✓</span><span>Visa and relocation workflows</span></li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Questions people will ask</h2>
+          <p class="muted">Use these answers to reduce friction before launch.</p>
+        </div>
+        <div class="faq">
+          <details><summary>Is AfrolinkHR already live?</summary><p>AfrolinkHR is in launch preparation mode. This site is designed to collect demand, explain the service, and support your next deployment steps.</p></details>
+          <details><summary>Will employer details be public?</summary><p>No. The platform is designed around controlled disclosure so sensitive identity and contact details can stay protected until screening has progressed.</p></details>
+          <details><summary>How do candidates apply?</summary><p>Candidates create profiles, review opportunities, and submit applications through the platform instead of relying on scattered external messaging.</p></details>
+          <details><summary>Can the service include training or visa support?</summary><p>Yes. The broader AfrolinkHR offer can include candidate readiness, employer vetting, and post-offer relocation or visa coordination support.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist">
+      <div class="container">
+        <div class="card">
+          <div class="section-head" style="margin-bottom:14px;">
+            <h2>Start collecting demand now</h2>
+            <p class="muted">Use this simple form as your early-access CTA.</p>
+          </div>
+          <form class="inline-form" onsubmit="event.preventDefault(); document.getElementById('form-note').textContent='Thanks — your early-access request has been captured for AfrolinkHR.';">
+            <input class="input" type="text" placeholder="Full name or company name" aria-label="Full name or company name">
+            <input class="input" type="email" placeholder="Email address" aria-label="Email address">
+            <button class="btn btn-primary" type="submit">Request access</button>
+          </form>
+          <p id="form-note" class="small muted" style="margin-top:12px;">This is a front-end capture demo ready to be connected to your email or CRM workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container grid-2">
+        <article class="card">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:hello@afrolinkhr.com">hello@afrolinkhr.com</a></p>
+          <p>Sales: <a href="mailto:sales@afrolinkhr.com">sales@afrolinkhr.com</a></p>
+          <p class="muted small">Replace these with your live mailbox once domain email is configured.</p>
+        </article>
+        <article class="card">
+          <h3>Privacy-first by design</h3>
+          <p>AfrolinkHR collects account details, profile data, billing information, and submitted application data in order to operate the platform, support subscriptions, and maintain records.</p>
+          <p class="muted small">Your full production package can expand this into complete Terms and Privacy pages.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <p class="brand" style="align-items:flex-start;"><span class="brand-mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 6.5C8.6 4.9 10.4 4 12.4 4C15.8 4 18.5 6.7 18.5 10.1C18.5 12 17.7 13.7 16.2 15.1L12 19.2L7.8 15.1C6.3 13.7 5.5 12 5.5 10.1C5.5 8.8 6 7.6 7 6.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M9.25 10.2C10.1 11.15 10.95 11.7 11.8 11.85C13.25 12.1 14.55 11.3 15.9 9.55" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="brand-name">AfrolinkHR <span>Privacy-first hiring</span></span></p>
+        <p class="small muted" style="margin-top:12px;">A polished launch site prepared for your domain, Vercel deployment, and early marketing.</p>
+      </div>
+      <div><strong>Sections</strong><p class="small muted">How it works<br>Pricing<br>Trust<br>FAQ<br>Contact</p></div>
+      <div><strong>Domain</strong><p class="small muted">afrolinkhr.com<br>www.afrolinkhr.com</p></div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      if(btn){ btn.addEventListener('click', function(){ dark=!dark; root.setAttribute('data-theme', dark ? 'dark' : 'light'); }); }
+    })();
+  </script>
+</body>
+</html>
